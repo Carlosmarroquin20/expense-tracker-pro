@@ -4,16 +4,20 @@ import ExpenseList from "../components/ExpenseList";
 import TotalExpenses from "../components/TotalExpenses";
 
 const HomePage = () => {
-    return (
-      <div className="min-h-screen w-full bg-gray-100 flex flex-col">
-        <Header />
-        <div className="flex-grow w-full max-w-7xl mx-auto p-6">
-          <ExpenseForm />
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-gray-100 flex flex-col items-center">
+      <Header />
+      <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg p-6 my-8">
+        <ExpenseForm />
+        <div className="mt-6">
           <ExpenseList />
+        </div>
+        <div className="mt-6">
           <TotalExpenses />
         </div>
       </div>
-    );
-  };
-  
-  export default HomePage;
+    </div>
+  );
+};
+
+export default HomePage;
