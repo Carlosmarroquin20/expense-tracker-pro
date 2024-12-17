@@ -1,6 +1,6 @@
 # Expense Tracker Pro
 
-![Expense Tracker Pro](https://via.placeholder.com/1200x600.png?text=Expense+Tracker+Pro)
+![Expense Tracker Pro]([https://via.placeholder.com/1200x600.png?text=Expense+Tracker+Pro](https://i.imgur.com/Y9pFLNx.png))
 
 ## 🚀 About the Project
 **Expense Tracker Pro** is a beautifully designed and highly functional web application that helps you manage your expenses effortlessly and efficiently. Built with React, Vite, and modern web technologies, this app is optimized for performance, accessibility, and usability.
