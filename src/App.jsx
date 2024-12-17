@@ -1,8 +1,13 @@
+
 import HomePage from "./pages/HomePage";
 import "./styles/index.css";
 
 const App = () => {
-  return <HomePage />;
+  return (
+    <div>
+      <HomePage />
+    </div>
+  );
 };
 
 export default App;
