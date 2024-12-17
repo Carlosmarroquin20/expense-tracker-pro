@@ -12,7 +12,7 @@ You can add, track, and delete expenses with a user-friendly and responsive inte
 ---
 
 ## 📸 Screenshots
-![Screenshot](https://via.placeholder.com/800x400.png?text=Expense+Tracker+Pro+Screenshot)
+![Screenshot](https://i.imgur.com/k6dTp8T.png)
 
 ---
 
