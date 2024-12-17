@@ -1,5 +1,5 @@
 import { useState } from "react";
-import PropTypes from "prop-types"; //PropTypes
+import PropTypes from "prop-types";
 
 const ExpenseForm = ({ addExpense }) => {
   const [name, setName] = useState("");
@@ -15,35 +15,46 @@ const ExpenseForm = ({ addExpense }) => {
   };
 
   return (
-    <div className="p-6 bg-gray-50 shadow-inner rounded-lg">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-4">Add a New Expense</h2>
-      <form onSubmit={handleSubmit} className="flex flex-wrap gap-4">
+    <div className="p-8 bg-white rounded-2xl shadow-2xl border-t-4 border-blue-500 transition-all duration-500 hover:shadow-blue-200 animate-fadeIn">
+      {/* Encabezado con Icono */}
+      <div className="flex items-center mb-6 gap-3">
+        <div className="w-10 h-10 bg-blue-600 text-white flex items-center justify-center rounded-full shadow-md animate-bounce">
+        ⭐
+        </div>
+        <h2 className="text-3xl font-extrabold text-gray-800 tracking-tight">
+          Add a New Expense
+        </h2>
+      </div>
+
+      {/* Formulario */}
+      <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
         <input
           type="text"
           placeholder="Expense Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="flex-1 border rounded-lg p-3 shadow-sm focus:ring-2 focus:ring-blue-500"
+          className="col-span-1 md:col-span-2 px-4 py-3 text-lg rounded-xl border-2 border-gray-300 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:border-transparent placeholder-gray-400 transition-all duration-300"
         />
+
         <input
           type="number"
           placeholder="Amount"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
-          className="w-1/4 border rounded-lg p-3 shadow-sm focus:ring-2 focus:ring-blue-500"
+          className="px-4 py-3 text-lg rounded-xl border-2 border-gray-300 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:border-transparent placeholder-gray-400 transition-all duration-300"
         />
+
         <button
           type="submit"
-          className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition"
+          className="col-span-1 md:col-span-3 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold py-3 px-6 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
         >
-          Add
+          ➕ Add Expense
         </button>
       </form>
     </div>
   );
 };
 
-// Agregar validación de props
 ExpenseForm.propTypes = {
   addExpense: PropTypes.func.isRequired,
 };
