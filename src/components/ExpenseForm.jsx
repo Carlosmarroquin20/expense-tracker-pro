@@ -1,57 +1,51 @@
 import { useState } from "react";
+import PropTypes from "prop-types"; //PropTypes
 
-const ExpenseForm = () => {
-  const [expenseName, setExpenseName] = useState("");
+const ExpenseForm = ({ addExpense }) => {
+  const [name, setName] = useState("");
   const [amount, setAmount] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (name.trim() && amount > 0) {
+      addExpense(name, amount);
+      setName("");
+      setAmount("");
+    }
+  };
+
   return (
-    <div className="p-6 bg-white shadow-2xl rounded-2xl transition-all duration-300 hover:shadow-blue-200">
-      <h2 className="text-3xl font-bold text-gray-700 mb-6 text-center">
-        Add a New Expense
-      </h2>
-      <form className="grid gap-6">
-        {/* Input: Expense Name */}
-        <div className="relative">
-          <input
-            type="text"
-            value={expenseName}
-            onChange={(e) => setExpenseName(e.target.value)}
-            placeholder=" "
-            className="peer w-full border-2 border-gray-300 rounded-lg p-4 shadow-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500 transition-all duration-300"
-          />
-          <label
-            className="absolute left-4 top-4 text-gray-400 text-sm peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-1 peer-focus:text-sm peer-focus:text-blue-500 transition-all duration-200"
-          >
-            Expense Name
-          </label>
-        </div>
-
-        {/* Input: Amount */}
-        <div className="relative">
-          <input
-            type="number"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            placeholder=" "
-            className="peer w-full border-2 border-gray-300 rounded-lg p-4 shadow-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500 transition-all duration-300"
-          />
-          <label
-            className="absolute left-4 top-4 text-gray-400 text-sm peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-1 peer-focus:text-sm peer-focus:text-blue-500 transition-all duration-200"
-          >
-            Amount
-          </label>
-        </div>
-
-        {/* Submit Button */}
+    <div className="p-6 bg-gray-50 shadow-inner rounded-lg">
+      <h2 className="text-2xl font-semibold text-gray-800 mb-4">Add a New Expense</h2>
+      <form onSubmit={handleSubmit} className="flex flex-wrap gap-4">
+        <input
+          type="text"
+          placeholder="Expense Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="flex-1 border rounded-lg p-3 shadow-sm focus:ring-2 focus:ring-blue-500"
+        />
+        <input
+          type="number"
+          placeholder="Amount"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          className="w-1/4 border rounded-lg p-3 shadow-sm focus:ring-2 focus:ring-blue-500"
+        />
         <button
           type="submit"
-          className="w-full bg-gradient-to-r from-blue-500 to-blue-700 text-white font-semibold text-lg py-3 rounded-lg shadow-lg hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-md transition-all duration-300"
+          className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition"
         >
-          ➕ Add Expense
+          Add
         </button>
       </form>
     </div>
   );
+};
+
+// Agregar validación de props
+ExpenseForm.propTypes = {
+  addExpense: PropTypes.func.isRequired,
 };
 
 export default ExpenseForm;
