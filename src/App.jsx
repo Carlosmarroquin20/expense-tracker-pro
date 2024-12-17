@@ -1,16 +1,37 @@
-import useExpenses from "./hooks/useExpenses";
+import useLocalStorage from "./hooks/useLocalStorage";
 import HomePage from "./pages/HomePage";
 
 const App = () => {
-  const { expenses, addExpense, deleteExpense, getTotalExpenses } = useExpenses();
+  // Usamos useLocalStorage para persistir los gastos
+  const [expenses, setExpenses] = useLocalStorage("expenses", []);
+
+  const addExpense = (name, amount) => {
+    const newExpense = {
+      id: Date.now(),
+      name,
+      amount: parseFloat(amount),
+    };
+    setExpenses([...expenses, newExpense]);
+  };
+
+  const deleteExpense = (id) => {
+    setExpenses(expenses.filter((expense) => expense.id !== id));
+  };
+
+  const totalExpenses = expenses.reduce(
+    (total, expense) => total + expense.amount,
+    0
+  );
 
   return (
-    <HomePage
-      expenses={expenses}
-      addExpense={addExpense}
-      deleteExpense={deleteExpense}
-      totalExpenses={getTotalExpenses()}
-    />
+    <div>
+      <HomePage
+        expenses={expenses}
+        addExpense={addExpense}
+        deleteExpense={deleteExpense}
+        totalExpenses={totalExpenses}
+      />
+    </div>
   );
 };
 
