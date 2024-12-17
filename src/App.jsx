@@ -1,12 +1,16 @@
-
+import useExpenses from "./hooks/useExpenses";
 import HomePage from "./pages/HomePage";
-import "./styles/index.css";
 
 const App = () => {
+  const { expenses, addExpense, deleteExpense, getTotalExpenses } = useExpenses();
+
   return (
-    <div>
-      <HomePage />
-    </div>
+    <HomePage
+      expenses={expenses}
+      addExpense={addExpense}
+      deleteExpense={deleteExpense}
+      totalExpenses={getTotalExpenses()}
+    />
   );
 };
 
