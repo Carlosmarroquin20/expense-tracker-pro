@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"; // PropTypes
 import { FaDollarSign } from "react-icons/fa";
 
 const TotalExpenses = ({ total = 0 }) => {
@@ -21,6 +22,11 @@ const TotalExpenses = ({ total = 0 }) => {
       </p>
     </div>
   );
+};
+
+// Agregar validación de props
+TotalExpenses.propTypes = {
+  total: PropTypes.number.isRequired,
 };
 
 export default TotalExpenses;
