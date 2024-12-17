@@ -1,17 +1,26 @@
 const Header = () => {
-  return (
-    <header className="w-full bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 py-10 shadow-2xl rounded-b-3xl animate-fadeIn">
-      <div className="container mx-auto text-center">
-        <h1 className="text-5xl md:text-6xl font-extrabold text-white drop-shadow-md tracking-widest">
-          Expense Tracker Pro
-        </h1>
-        <div className="w-1/4 mx-auto mt-4 border-b-4 border-blue-300 rounded-full shadow-md"></div>
-        <p className="mt-4 text-lg md:text-xl text-blue-200 font-light">
-          Manage your expenses effortlessly and efficiently 🚀
-        </p>
-      </div>
-    </header>
-  );
-};
-
-export default Header;
+    return (
+      <header className="w-full bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 py-6 shadow-lg rounded-b-2xl animate-fadeInDown">
+        <div className="container mx-auto text-center">
+          {/* Título Principal */}
+          <h1
+            className="text-4xl md:text-5xl font-bold text-white drop-shadow-sm tracking-wide 
+            hover:text-blue-300 hover:drop-shadow-lg transition-all duration-300"
+          >
+            Expense Tracker Pro
+          </h1>
+  
+          {/* Línea decorativa */}
+          <div className="w-12 h-1 bg-blue-300 mx-auto mt-3 rounded-full"></div>
+  
+          {/* Subtexto */}
+          <p className="mt-3 text-sm md:text-base text-blue-200 font-light">
+            Manage your expenses with precision 🚀
+          </p>
+        </div>
+      </header>
+    );
+  };
+  
+  export default Header;
+  
