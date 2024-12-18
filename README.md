@@ -80,7 +80,7 @@ Expense Tracker Pro works seamlessly on:
 ## 👨‍💻 Author
 Developed by **Carlos Marroquin**
 - GitHub: [Carlosmarroquin20](https://github.com/Carlosmarroquin20)
-- LinkedIn: *(Add your LinkedIn profile link here)*
+- LinkedIn: *(www.linkedin.com/in/emanuel-marroquin-160488321)*
 
 ---
 
@@ -105,4 +105,4 @@ If you like this project, give it a ⭐ on GitHub!
 
 ---
 
-![Thank You](https://via.placeholder.com/1200x300.png?text=Thank+You+for+Checking+Out+Expense+Tracker+Pro)
+![Thank You](https://i.imgur.com/JdQt3Us.png)
